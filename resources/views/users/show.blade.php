@@ -5,10 +5,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2> Show User</h2>
+            <h2> Mostrar Usuario</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary mb-3" href="{{ route('users.index') }}"> Cancelar</a>
         </div>
     </div>
 </div>
