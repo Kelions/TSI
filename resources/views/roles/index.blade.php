@@ -8,7 +8,7 @@
             <h2>Role Management</h2>
         </div>
         <div class="pull-right">
-        @can('role-create')
+        @can('rol-crear')
             <a class="btn btn-success" href="{{ route('roles.create') }}"> Create New Role</a>
             @endcan
         </div>
@@ -35,10 +35,10 @@
         <td>{{ $role->name }}</td>
         <td>
             <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
-            @can('role-edit')
+            @can('rol-editar')
                 <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
             @endcan
-            @can('role-delete')
+            @can('rol-borrar')
                 {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}

@@ -8,7 +8,7 @@
                 <h2>Products</h2>
             </div>
             <div class="pull-right">
-                @can('product-create')
+                @can('proyecto-crear')
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
                 @endcan
             </div>
@@ -38,14 +38,14 @@
 	        <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
-                    @can('product-edit')
+                    @can('proyecto-editar')
                     <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
                     @endcan
 
 
                     @csrf
                     @method('DELETE')
-                    @can('product-delete')
+                    @can('proyecto-borrar')
                     <button type="submit" class="btn btn-danger">Delete</button>
                     @endcan
                 </form>

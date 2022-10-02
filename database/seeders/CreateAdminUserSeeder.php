@@ -1,13 +1,13 @@
 <?php
-
+  
 namespace Database\Seeders;
-
+  
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-
+  
 class CreateAdminUserSeeder extends Seeder
 {
     /**
@@ -19,20 +19,23 @@ class CreateAdminUserSeeder extends Seeder
     {
         $user = User::create([
             'nombre_usuario' => 'Admin',
-            'apellido_usuario' => 'Supremo',
-            'rut' => '12345678-9',
-            'especialidad' => 'Gerennte',
-            'email' => 'admin@gmail.com',
+            'apellido_usuario' => 'Adminson',
+            'rut' =>'12345678-9',
+            'especialidad' => 'Administrativa',
             'cel' => '+569 1234 1234',
-            'password' => bcrypt('12345678')
+            
+
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('123456'),
+
         ]);
-    
+      
         $role = Role::create(['name' => 'Admin']);
-     
+       
         $permissions = Permission::pluck('id','id')->all();
-   
-        $role->syncPermissions($permissions);
      
+        $role->syncPermissions($permissions);
+       
         $user->assignRole([$role->id]);
     }
 }
