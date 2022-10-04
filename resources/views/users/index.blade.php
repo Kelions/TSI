@@ -25,15 +25,23 @@
  <tr>
    <th>No</th>
    <th>Nombre</th>
+   <th>Apellido</th>
+   <th>Rut</th>
+   <th>Especialidad</th>
    <th>Email</th>
+   <th>Fono cel.</th>
    <th>Roles</th>
    <th width="280px">Action</th>
  </tr>
  @foreach ($data as $key => $user)
   <tr>
     <td>{{ ++$i }}</td>
-    <td>{{ $user->name }}</td>
+    <td>{{ $user->nombre_usuario }}</td>
+    <td>{{ $user->apellido_usuario }}</td>
+    <td>{{ $user->rut }}</td>
+    <td>{{ $user->especialidad }}</td>
     <td>{{ $user->email }}</td>
+    <td>{{ $user->cel }}</td>
     <td>
       @if(!empty($user->getRoleNames()))
         @foreach($user->getRoleNames() as $v)

@@ -44,8 +44,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            //hay un bug con el verify, lo veo dps
+
+            'nombre_usuario' => 'required',
+            //'apellido_usuario' => 'required',
+            //'rut' => 'required|rut|unique:users,rut',
+            //'especialidad' => 'required',
             'email' => 'required|email|unique:users,email',
+            //'cel' => 'required|cel|unique:users,cel',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
@@ -57,7 +63,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+                        ->with('success','El Nuevo Usuario se ha creado Satisfactoriamente');
     }
     
     /**
@@ -97,9 +103,13 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'same:confirm-password',
+            'nombre_usuario' => 'required',
+            //'apellido_usuario' => 'required',
+            //'rut' => 'required|rut|unique:users,rut',
+            //'especialidad' => 'required',
+            'email' => 'required|email|unique:users,email',
+            //'cel' => 'required|cel|unique:users,cel',
+            'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
     
@@ -117,7 +127,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('success','El Usuario se ha Actualizado');
     }
     
     /**
@@ -130,6 +140,6 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+                        ->with('success','El Usuario se ha Borrado');
     }
 }
