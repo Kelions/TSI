@@ -8,7 +8,7 @@
             <h2> Mostrar Usuario</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary mb-4" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary mb-4" href="{{ route('users.index') }}"> Volver</a>
         </div>
     </div>
 </div>
@@ -18,13 +18,37 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nombre:</strong>
-            {{ $user->name }}
+            {{ $user->nombre_usuario }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Apellido:</strong>
+            {{ $user->apellido_usuario }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Rut:</strong>
+            {{ $user->rut}}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Especialidad:</strong>
+            {{ $user->especialidad}}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Email:</strong>
             {{ $user->email }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Fono Cel.</strong>
+            {{ $user->cel }}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -39,3 +63,10 @@
     </div>
 </div>
 @endsection
+{{-- Example --}}
+{{-- <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="form-group">
+        <strong></strong>
+        {{ $user-> }}
+    </div>
+</div> --}}
