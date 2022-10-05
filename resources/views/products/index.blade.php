@@ -37,16 +37,16 @@
 	        <td>{{ $product->detail }}</td>
 	        <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Mostrar</a>
+                    <a class="btn btn-outline-secondary" href="{{ route('products.show',$product->id) }}">Mostrar</a>
                     @can('proyecto-editar')
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Editar</a>
+                    <a class="btn btn-outline-primary" href="{{ route('products.edit',$product->id) }}">Editar</a>
                     @endcan
 
 
                     @csrf
                     @method('DELETE')
                     @can('proyecto-borrar')
-                    <button type="submit" class="btn btn-danger">Borrar</button>
+                    <button type="submit" class="btn btn-outline-danger">Borrar</button>
                     @endcan
                 </form>
 	        </td>

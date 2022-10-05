@@ -8,7 +8,7 @@
             <h2>Crear Nuevo Rol</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary mb-4" href="{{ route('roles.index') }}"> Atras</a>
+            <a class="btn btn-outline-secondary mb-4" href="{{ route('roles.index') }}"> Volver</a>
         </div>
     </div>
 </div>
@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Crear</button>
+        <button type="submit" class="btn btn-outline-success">Crear</button>
     </div>
 </div>
 {!! Form::close() !!}

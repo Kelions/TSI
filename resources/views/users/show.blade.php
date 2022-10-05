@@ -8,7 +8,7 @@
             <h2> Mostrar Usuario</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary mb-4" href="{{ route('users.index') }}"> Volver</a>
+            <a class="btn btn-outline-secondary mb-4" href="{{ route('users.index') }}"> Volver</a>
         </div>
     </div>
 </div>

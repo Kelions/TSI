@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Editar Producto</h2>
+                <h2>Editar Proyecto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Atras</a>
+                <a class="btn btn-outline-secondary" href="{{ route('products.index') }}"> Volver</a>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-		      <button type="submit" class="btn btn-primary">Submit</button>
+		      <button type="submit" class="btn btn-outline-primary">Editar</button>
 		    </div>
 		</div>
 
