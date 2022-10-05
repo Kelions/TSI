@@ -8,7 +8,7 @@
                 <h2> Mostrar Proyecto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('proyects.index') }}"> Atras</a>
+                <a class="btn btn-outlined-secondary" href="{{ route('proyects.index') }}"> Volver</a>
             </div>
         </div>
     </div>
