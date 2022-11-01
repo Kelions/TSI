@@ -46,8 +46,8 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Rut:<small>sin puntos y con digito verificador</small></strong>
-            {!! Form::text('rut', null, array('placeholder' => '192658475-8','class' => 'form-control')) !!}
+            <strong>Rut:<small> (sin puntos y con digito verificador)</small></strong>
+            {!! Form::text('rut', null, array('placeholder' => '192658475-K','class' => 'form-control')) !!}
         </div>
     </div>
 

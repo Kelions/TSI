@@ -37,7 +37,7 @@
 	        <td>{{ $proyect->detail }}</td>
 	        <td>
                 <form action="{{ route('proyects.destroy',$proyect->id) }}" method="POST">
-                    <a class="btn btn-outline-secondary" href="{{ route('proyects.show',$proyect->id) }}">Mostrar</a>
+                    <a class="btn btn-outline-secondary" href="{{ route('proyects.show',$proyect->id) }}">Ver</a>
                     @can('proyecto-editar')
                     <a class="btn btn-outline-primary" href="{{ route('proyects.edit',$proyect->id) }}">Editar</a>
                     @endcan

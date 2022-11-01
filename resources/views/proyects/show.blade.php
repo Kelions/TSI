@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Mostrar Proyecto</h2>
+                <h2> Detalle Proyecto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outlined-secondary" href="{{ route('proyects.index') }}"> Volver</a>
+                <a class="btn btn-outline-secondary" href="{{ route('proyects.index') }}"> Volver</a>
             </div>
         </div>
     </div>
@@ -28,5 +28,5 @@
             </div>
         </div>
     </div>
+    <p class="text-center text-primary"><small>Sistema Comunicacion RDI</small></p>
 @endsection
-<p class="text-center text-primary"><small>Sistema Comunicacion RDI</small></p>

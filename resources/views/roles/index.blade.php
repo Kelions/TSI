@@ -34,7 +34,7 @@
         <td>{{ ++$i }}</td>
         <td>{{ $role->name }}</td>
         <td>
-            <a class="btn btn-outline-secondary" href="{{ route('roles.show',$role->id) }}">Mostrar</a>
+            <a class="btn btn-outline-secondary" href="{{ route('roles.show',$role->id) }}">Ver</a>
             @can('rol-editar')
                 <a class="btn btn-outline-primary" href="{{ route('roles.edit',$role->id) }}">Editar</a>
             @endcan

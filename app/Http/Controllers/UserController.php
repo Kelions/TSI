@@ -44,14 +44,12 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            //hay un bug con el verify, lo veo dps
-
             'nombre_usuario' => 'required',
-            //'apellido_usuario' => 'required',
-            //'rut' => 'required|rut|unique:users,rut',
-            //'especialidad' => 'required',
+            'apellido_usuario' => 'required',
+            'rut' => 'required|string|min:10|max:10|ends_with:"-1","-2","-3","-4","-5","-6","-7","-8","-9","-K"|unique:users,rut',
+            'especialidad' => 'required',
             'email' => 'required|email|unique:users,email',
-            //'cel' => 'required|cel|unique:users,cel',
+            'cel' => 'required|string|min:15|max:15|unique:users,cel',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);

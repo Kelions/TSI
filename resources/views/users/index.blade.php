@@ -50,7 +50,7 @@
       @endif
     </td>
     <td>
-       <a class="btn btn-outline-secondary" href="{{ route('users.show',$user->id) }}">Mostrar</a>
+       <a class="btn btn-outline-secondary" href="{{ route('users.show',$user->id) }}">Ver</a>
        <a class="btn btn-outline-primary" href="{{ route('users.edit',$user->id) }}">Editar</a>
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Borrar', ['class' => 'btn btn-outline-danger']) !!}
