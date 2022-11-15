@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Mostrar Producto</h2>
+                <h2> Mostrar Proyecto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Atras</a>
+                <a class="btn btn-outlined-secondary" href="{{ route('proyects.index') }}"> Volver</a>
             </div>
         </div>
     </div>
@@ -18,13 +18,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nombre:</strong>
-                {{ $product->name }}
+                {{ $proyect->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Detalles:</strong>
-                {{ $product->detail }}
+                {{ $proyect->detail }}
             </div>
         </div>
     </div>

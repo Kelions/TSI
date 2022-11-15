@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Editar Proyecto</h2>
+                <h2>Añadir nuevo proyecto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-secondary" href="{{ route('products.index') }}"> Volver</a>
+                <a class="btn btn-outline-secondary mb-4" href="{{ route('proyects.index') }}">Volver </a>
             </div>
         </div>
     </div>
@@ -26,26 +26,25 @@
     @endif
 
 
-    <form action="{{ route('products.update',$product->id) }}" method="POST">
+    <form action="{{ route('proyects.store') }}" method="POST">
     	@csrf
-        @method('PUT')
 
 
          <div class="row">
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Nombre:</strong>
-		            <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
+		            <input type="text" name="name" class="form-control" placeholder="Name">
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Detalle:</strong>
-		            <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
+		            <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
 		        </div>
 		    </div>
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-		      <button type="submit" class="btn btn-outline-primary">Editar</button>
+		            <button type="submit" class="btn btn-outline-success">Crear</button>
 		    </div>
 		</div>
 

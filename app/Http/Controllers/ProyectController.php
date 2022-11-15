@@ -2,10 +2,10 @@
     
 namespace App\Http\Controllers;
     
-use App\Models\Product;
+use App\Models\Proyect;
 use Illuminate\Http\Request;
     
-class ProductController extends Controller
+class ProyectController extends Controller
 { 
     /**
      * Display a listing of the resource.
@@ -26,8 +26,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
-        return view('products.index',compact('products'))
+        $proyects = Proyect::latest()->paginate(5);
+        return view('proyects.index',compact('proyects'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -38,7 +38,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('proyects.create');
     }
     
     /**
@@ -54,65 +54,65 @@ class ProductController extends Controller
             'detail' => 'required',
         ]);
     
-        Product::create($request->all());
+        Proyect::create($request->all());
     
-        return redirect()->route('products.index')
+        return redirect()->route('proyects.index')
                         ->with('success','El Proyecto se ha Creado Satisfactoriamente.');
     }
     
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Proyect $proyect)
     {
-        return view('products.show',compact('product'));
+        return view('proyects.show',compact('proyect'));
     }
     
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Proyect $proyect)
     {
-        return view('products.edit',compact('product'));
+        return view('proyects.edit',compact('proyect'));
     }
     
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Proyect $proyect)
     {
          request()->validate([
             'name' => 'required',
             'detail' => 'required',
         ]);
     
-        $product->update($request->all());
+        $proyect->update($request->all());
     
-        return redirect()->route('products.index')
+        return redirect()->route('proyects.index')
                         ->with('success','El Proyecto se ha Actualizado');
     }
     
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Proyect  $proyect
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Proyect $proyect)
     {
-        $product->delete();
+        $proyect->delete();
     
-        return redirect()->route('products.index')
+        return redirect()->route('proyects.index')
                         ->with('success','El Proyecto se ha borrado');
     }
 }

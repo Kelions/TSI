@@ -54,7 +54,7 @@
                         @else
                         <li><a class="nav-link" href="{{ route('users.index') }}">Gestion Usuarios</a></li>
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Gestion Roles</a></li>
-                            <li><a class="nav-link" href="{{ route('products.index') }}">Gestion Proyectos</a></li>
+                            <li><a class="nav-link" href="{{ route('proyects.index') }}">Gestion Proyectos</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
