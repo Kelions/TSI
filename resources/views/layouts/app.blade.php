@@ -46,11 +46,11 @@
                                 </li>
                             @endif
 
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link disabled" href="{{ route('register') }}">{{ __('Registro') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                         <li><a class="nav-link" href="{{ route('users.index') }}">Gestion Usuarios</a></li>
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Gestion Roles</a></li>
