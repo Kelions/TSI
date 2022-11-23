@@ -46,32 +46,25 @@
                                 </li>
                             @endif
 
-                            {{-- @if (Route::has('register'))
+                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link disabled" href="{{ route('register') }}">{{ __('Registro') }}</a>
                                 </li>
-                            @endif --}}
+                            @endif
                         @else
                         <li><a class="nav-link" href="{{ route('users.index') }}">Gestion Usuarios</a></li>
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Gestion Roles</a></li>
                             <li><a class="nav-link" href="{{ route('proyects.index') }}">Gestion Proyectos</a></li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <ul>
+                                <a class="nav-link">
+                                    <form action="{{route('logout')}}" method="POST">
                                         @csrf
+        
+                                        <button class="btn btn-sm btn-outline-danger my-2 my-sm-0">logout</button>
                                     </form>
-                                </div>
-                            </li>
+                                </a>
+                            </ul>
+
                         @endguest
                     </ul>
                 </div>
