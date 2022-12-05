@@ -70,15 +70,23 @@
             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
         </div>
     </div>
+    {{-- //contraseña old
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Contraseña:</strong>
+            <strong>Antigua contraseña:</strong>
+            {!! Form::password('password', array('placeholder' => 'Contraseña','class' => 'form-control')) !!}
+        </div>
+    </div> --}}
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Nueva contraseña:</strong>
             {!! Form::password('password', array('placeholder' => 'Contraseña','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Confirmar Contraseña:</strong>
+            <strong>Confirmar nueva contraseña:</strong>
             {!! Form::password('confirm-password', array('placeholder' => 'Confirmar contraseña','class' => 'form-control')) !!}
         </div>
     </div>

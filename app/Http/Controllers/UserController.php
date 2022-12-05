@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id','DESC')->paginate(5);
+        $data = User::orderBy('id','ASC')->paginate(5);
         return view('users.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -49,7 +49,7 @@ class UserController extends Controller
             'rut' => 'required|string|min:10|max:10|ends_with:"-1","-2","-3","-4","-5","-6","-7","-8","-9","-K"|unique:users,rut',
             'especialidad' => 'required',
             'email' => 'required|email|unique:users,email',
-            'cel' => 'required|string|min:15|max:15|unique:users,cel',
+            'cel' => 'required|string|min:14|max:15|unique:users,cel',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
@@ -102,13 +102,13 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'nombre_usuario' => 'required',
-            //'apellido_usuario' => 'required',
-            //'rut' => 'required|rut|unique:users,rut',
-            //'especialidad' => 'required',
-            'email' => 'required|email|unique:users,email',
-            //'cel' => 'required|cel|unique:users,cel',
+            'apellido_usuario' => 'required',
+            'rut' => 'required|string|min:10|max:10|ends_with:"-1","-2","-3","-4","-5","-6","-7","-8","-9","-K"|unique:users,rut,'.$id,
+            'especialidad' => 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'cel' => 'required|string|min:14|max:15|unique:users,cel'.$id,
             'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+            'roles' => 'required',
         ]);
     
         $input = $request->all();
@@ -134,10 +134,22 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+
+
+    
+
+    public function destroy($id){ /*falta no borrarte a ti*/ 
         User::find($id)->delete();
         return redirect()->route('users.index')
                         ->with('success','El Usuario se ha Borrado');
-    }
+}
+
+
+
+
+ /*    {
+        User::find($id)->delete();
+        return redirect()->route('users.index')
+                        ->with('success','El Usuario se ha Borrado');
+    } */
 }

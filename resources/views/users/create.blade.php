@@ -32,7 +32,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nombre:</strong>
-            {!! Form::text('nombre_usuario', null, array('placeholder' => 'Fedrico','class' => 'form-control')) !!}
+            {!! Form::text('nombre_usuario', null, array('placeholder' => 'Juanito','class' => 'form-control')) !!}
         </div>
     </div>
 
@@ -40,14 +40,14 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Apellido:</strong>        
-            {!! Form::text('apellido_usuario', null, array('placeholder' => 'Boyer','class' => 'form-control')) !!}
+            {!! Form::text('apellido_usuario', null, array('placeholder' => 'Perez','class' => 'form-control')) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Rut:<small> (sin puntos y con digito verificador)</small></strong>
-            {!! Form::text('rut', null, array('placeholder' => '192658475-K','class' => 'form-control')) !!}
+            {!! Form::text('rut', null, array('placeholder' => '12345678-9','class' => 'form-control')) !!}
         </div>
     </div>
 
@@ -61,14 +61,14 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Celular:</strong>        
-            {!! Form::text('cel', null, array('placeholder' => '+569 71419385','class' => 'form-control')) !!}
+            {!! Form::text('cel', null, array('placeholder' => '+569 1234 1234','class' => 'form-control')) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Email:</strong>
-            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+            {!! Form::text('email', null, array('placeholder' => 'Juanito.perez@gmail','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
