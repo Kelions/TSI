@@ -9,6 +9,8 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+
+use Auth;
     
 class UserController extends Controller
 {
@@ -138,10 +140,23 @@ class UserController extends Controller
 
     
 
-    public function destroy($id){ /*falta no borrarte a ti*/ 
-        User::find($id)->delete();
-        return redirect()->route('users.index')
-                        ->with('success','El Usuario se ha Borrado');
+    public function destroy($id){
+
+        $userID = auth()->user()->id; 
+        var_dump($userID);
+
+        if ($userID != $id) {
+
+            User::find($id)->delete();
+            return redirect()->route('users.index')
+                            ->with('success','El Usuario se ha Borrado');
+            # code...
+        }else 
+            return redirect()->route('users.index')
+                ->with('danger','No puedes borrarte a ti mismo!');
+
+
+
 }
 
 
