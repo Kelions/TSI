@@ -70,14 +70,15 @@
             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
         </div>
     </div>
-    {{-- //contraseña old
+
+
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Antigua contraseña:</strong>
-            {!! Form::password('password', array('placeholder' => 'Contraseña','class' => 'form-control')) !!}
+            <strong>Anterior contraseña:</strong>
+            {!! Form::password('old-password', array('placeholder' => 'Contraseña Anterior','class' => 'form-control')) !!}
         </div>
-    </div> --}}
-
+    </div>
+    
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nueva contraseña:</strong>

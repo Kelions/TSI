@@ -9,6 +9,9 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+
+use Auth;
+
     
 class UserController extends Controller
 {
@@ -100,13 +103,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+
         $this->validate($request, [
             'nombre_usuario' => 'required',
             'apellido_usuario' => 'required',
             'rut' => 'required|string|min:10|max:10|ends_with:"-1","-2","-3","-4","-5","-6","-7","-8","-9","-K"|unique:users,rut,'.$id,
             'especialidad' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
-            'cel' => 'required|string|min:14|max:15|unique:users,cel'.$id,
+            'cel' => 'required|string|min:14|max:15|unique:users,cel,'.$id,
+            'old-password' => ['required','current_password'],
             'password' => 'required|same:confirm-password',
             'roles' => 'required',
         ]);
@@ -117,7 +123,9 @@ class UserController extends Controller
         }else{
             $input = Arr::except($input,array('password'));    
         }
-    
+
+        
+
         $user = User::find($id);
         $user->update($input);
         DB::table('model_has_roles')->where('model_id',$id)->delete();
@@ -138,10 +146,23 @@ class UserController extends Controller
 
     
 
-    public function destroy($id){ /*falta no borrarte a ti*/ 
-        User::find($id)->delete();
-        return redirect()->route('users.index')
-                        ->with('success','El Usuario se ha Borrado');
+    public function destroy($id){
+
+        $userID = auth()->user()->id; 
+        var_dump($userID);
+
+        if ($userID != $id) {
+
+            User::find($id)->delete();
+            return redirect()->route('users.index')
+                            ->with('success','El Usuario se ha Borrado');
+            # code...
+        }else 
+            return redirect()->route('users.index')
+                ->with('danger','No puedes borrarte a ti mismo!');
+
+
+
 }
 
 
