@@ -8,7 +8,7 @@
                 <h2> Detalle Proyecto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-secondary" href="{{ route('proyects.index') }}"> Volver</a>
+                <a class="btn btn-outline-secondary mb-5 mt-3" href="{{ route('proyects.index') }}"> Volver</a>
             </div>
         </div>
     </div>
@@ -28,5 +28,20 @@
             </div>
         </div>
     </div>
+
+
+    <p class="text-center text-primary mt-5">
+      
+          <a href="{{ route('crear_rdi') }}"><button type="button" class="btn btn-info mt-5">Crear RDI</button></a> 
+        
+            
+      
+        
+
+    </p>
+    
+
+
+
     <p class="text-center text-primary"><small>Sistema Comunicacion RDI</small></p>
 @endsection
