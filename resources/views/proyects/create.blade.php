@@ -52,5 +52,5 @@
     </form>
 
 
-<p class="text-center text-primary"><small>Sistema Comunicacion RDI</small></p>
+    <p class="text-center text-primary"><small>Sistema Comunicacion RDI</small></p>
 @endsection

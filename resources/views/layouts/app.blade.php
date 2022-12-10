@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -77,5 +77,18 @@
             </div>
         </main>
     </div>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor=>{
+            console.log(editor);
+        })
+        .catch(error=>{
+            console.error(error);
+        });
+    </script>
 </body>
+
 </html>
