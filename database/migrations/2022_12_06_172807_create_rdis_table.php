@@ -16,14 +16,13 @@ return new class extends Migration
         Schema::create('rdis', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('id_project')
-                
-                ->constrained('projects')
+            $table->foreignId('id_proyect')
+                ->constrained('proyects')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
                         
-            $table->string('id_sender'); //todo: ids 
-            $table->string('id_recipient');
+            //$table->string('id_sender');
+            //$table->string('id_recipient');
 
             $table->string('name_sender');
             $table->string('name_recipient');
@@ -31,7 +30,7 @@ return new class extends Migration
             $table->text('specialization');
             $table->text('content');
             $table->char('status',1);
-            $table->string('path')->nulleable();//img
+            //$table->string('path')->nulleable();//img
             $table->timestamps();
         });
     }
