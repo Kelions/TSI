@@ -28,51 +28,51 @@
     
     
     
-    {!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Nombre:</strong>
-                {!! Form::text('nombre_destinatario', null, array('class' => 'form-control')) !!}
+    <form action="{{ route('proyects.store') }}" method="POST">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Nombre:</strong>
+                    <input type="text" name="name" class="form-control" placeholder="">
+                </div>
             </div>
-        </div>
-    
-        {{-- el Form::text (bla bla) es para hacer un ID --}}
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Apellido:</strong>        
-                {!! Form::text('apellido_destinatario', null, array('class' => 'form-control')) !!}
+        
+            {{-- el Form::text (bla bla) es para hacer un ID --}}
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Apellido:</strong>        
+                    <input type="text" name="name" class="form-control" placeholder="">
+                </div>
             </div>
-        </div>
-    
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Rut:<small> (sin puntos y con digito verificador)</small></strong>
-                {!! Form::text('rut_destinatario', null, array('placeholder' => '12345678-9','class' => 'form-control')) !!}
+        
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>RUT:</strong> <small>(Sin puntos y con digito verificador)</small>
+                    <input type="text" name="name" class="form-control" placeholder="12345678-9">
+                </div>
             </div>
-        </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 mb-4">
-            <div class="form-group">
-                <strong>Tema RDI:<small> (Consta de 45 caracteres)</small></strong>
-                {!! Form::text('tema_rdi', null, array('placeholder' => '...','class' => 'form-control')) !!}
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Tema RDI:</strong>
+                    <input type="text" name="name" class="form-control" placeholder="...">
+                </div>
             </div>
-        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 mb-5">
             <strong>Requerimiento de Informacion:<small></small></strong>
 
-            {!! Form::text('contenido_rdi', null, array('class' => 'form-control mb-5', 'id' => 'editor')) !!}
-
+            <textarea class="form-control mb-5" name="" id="editor" cols="30" rows="10"></textarea>
             
         </div>
-    
+    </form>
 
     </div>
-    {!! Form::close() !!}
+    
     
     
     <p class="text-center text-primary"><small>Sistema Comunicacional RDI</small></p>
-
+    
+ {{-- npm install --save @ckeditor/ckeditor5-build-classic --}}
 
 @endsection
