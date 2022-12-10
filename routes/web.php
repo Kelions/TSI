@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProyectController;
+use App\Http\Controllers\RdiController;
 
 
 Route::get('/', function () {
@@ -20,8 +21,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('proyects', ProyectController::class);
+    Route::resource('rdis', RdiController::class);
 });
 
-Route::get('crear_rdi', function () {
-    return view('RDI/create_rdi');
-})->name('crear_rdi');
+//Route::get('crear_rdi', function () {
+//    return view('RDI/create_rdi');
+//})->name('crear_rdi');

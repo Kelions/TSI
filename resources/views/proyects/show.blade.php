@@ -52,7 +52,7 @@
 
     <p class="text-center text-primary mt-5">
       
-          <a href="{{ route('crear_rdi') }}"><button type="button" class="btn btn-info mt-5">Crear RDI</button></a> 
+          <a href="{{ route('rdis.create') }}"><button type="button" class="btn btn-info mt-5">Crear RDI</button></a> 
         
             
       

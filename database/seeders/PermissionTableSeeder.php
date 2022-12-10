@@ -23,7 +23,11 @@ class PermissionTableSeeder extends Seeder
            'proyecto-listar',
            'proyecto-crear',
            'proyecto-editar',
-           'proyecto-borrar'
+           'proyecto-borrar',
+           'rdi-listar',
+           'rdi-crear',
+           'rdi-editar',
+           'rdi-borrar',
         ];
       
         foreach ($permissions as $permission) {
