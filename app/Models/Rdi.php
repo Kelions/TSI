@@ -17,7 +17,7 @@ class Rdi extends Model
      */
     protected $fillable = [
         'id_proyect', 'name_sender', 'name_recipient', 'subject',
-        'specialization','content','status'
+        'specialization','content','status','respuesta'
     ];
 
     

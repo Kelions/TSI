@@ -20,6 +20,7 @@ return new class extends Migration
                 ->constrained('proyects')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            //$table->string('name_proyect');
             //$table->string('id_sender');
             //$table->string('id_recipient');
 
@@ -29,6 +30,8 @@ return new class extends Migration
             $table->text('specialization');
             $table->text('content');
             $table->char('status',1);
+
+            $table->text('respuesta')->default('A la espera');
             //$table->string('path')->nulleable();//img
             $table->timestamps();
         });

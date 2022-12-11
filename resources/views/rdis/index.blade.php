@@ -35,7 +35,7 @@
    <th>Asunto</th>
    <th>Especialidad</th>
    <th>estado</th>
-   <th width="150">Action</th>
+   <th width="175">Action</th>
  </tr>
  @foreach ($data as $key => $rdi)
   <tr>
@@ -47,7 +47,7 @@
     <td>{{ $rdi->status }}</td>
     <td>
        <a class="btn btn-outline-secondary" href="{{ route('rdis.show',$rdi->id) }}">Ver</a>
-       <a class="btn btn-outline-primary" href="{{ route('rdis.edit',$rdi->id) }}">Editar</a>
+       <a class="btn btn-outline-primary" href="{{ route('rdis.edit',$rdi->id) }}">Responder</a>
     </td>
   </tr>
  @endforeach
