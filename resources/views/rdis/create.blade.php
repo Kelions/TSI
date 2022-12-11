@@ -30,8 +30,8 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Id projecto:</strong>
-            {!! Form::text('id_proyect', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <strong>Proyecto:</strong>
+            {!! Form::text('name_proyect', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
 

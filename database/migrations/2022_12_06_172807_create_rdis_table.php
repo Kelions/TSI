@@ -20,7 +20,6 @@ return new class extends Migration
                 ->constrained('proyects')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-                        
             //$table->string('id_sender');
             //$table->string('id_recipient');
 

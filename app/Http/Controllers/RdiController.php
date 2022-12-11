@@ -61,7 +61,7 @@ class RdiController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id_proyect' => 'required',
+            'name_proyect' => 'required',
             'name_sender' => 'required',
             'name_recipient' => 'required',
             'subject' => 'required',

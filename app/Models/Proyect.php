@@ -4,6 +4,7 @@ namespace App\Models;
   
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Rdi;
   
 class Proyect extends Model
 {
@@ -17,4 +18,10 @@ class Proyect extends Model
     protected $fillable = [
         'name', 'detail'
     ];
+
+    public function rdis()
+    {
+        return $this->hasMany('App\Models\Rdi'); // assuming this is the path for Log model
+    }
+
 }
