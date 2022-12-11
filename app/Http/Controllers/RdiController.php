@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Rdi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ProyectController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
+use App\Models\Proyect;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -47,9 +50,13 @@ class RdiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   $myname = User::pluck('nombre_usuario')->first();
         $permission = Permission::get();
-        return view('rdis.create',compact('permission'));
+        $proyects = Proyect::pluck('id','id')->all();
+        $users = User::pluck('nombre_usuario')->all();
+        $sps = User::pluck('especialidad')->all();
+        
+        return view('rdis.create',compact('permission','proyects','users','sps','myname'));
     }
     
     /**
@@ -59,9 +66,10 @@ class RdiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {  
+    
         $this->validate($request, [
-            'name_proyect' => 'required',
+            'id_proyect' => 'required',
             'name_sender' => 'required',
             'name_recipient' => 'required',
             'subject' => 'required',
@@ -69,7 +77,6 @@ class RdiController extends Controller
             'content' => 'required',
             'status' => 'required',
         ]);
-    
         $input = $request->all();
         $rdi = Rdi::create($input);
         /*$user->assignRole($request->input('roles'));*/

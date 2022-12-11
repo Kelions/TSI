@@ -16,14 +16,12 @@ class Rdi extends Model
      * @var array
      */
     protected $fillable = [
-        'name_proyect', 'name_sender', 'name_recipient', 'subject',
+        'id_proyect', 'name_sender', 'name_recipient', 'subject',
         'specialization','content','status'
     ];
 
-    public function proyect()
-    {
-        return $this->belongsTo('App\Models\Proyect'); // assuming this is the path for User model
-    }
+    
 
 
 }
+

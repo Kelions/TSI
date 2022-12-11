@@ -31,10 +31,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Id projecto:</strong>
-            <select name="id_proyect" id="id_proyect" class="form-control">
-                <option>Opciones</option>
-                <option>Opcion2</option>
-            </select>
+            {!! Form::select('id_proyect',$proyects,[], array('class' => 'form-control','multiple')) !!}
         </div>
         
     </div>
@@ -43,18 +40,14 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Remitente:</strong>        
-            {!! Form::text('name_sender', null, array('placeholder' => 'Juan','class' => 'form-control', 'disabled')) !!}
+            {!! Form::text('name_sender',$myname, array('placeholder' => 'Juan','class' => 'form-control','readonly')) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Destinnatario:</strong>
-            {{-- {!! Form::text('name_recipient', null, array('placeholder' => '','class' => 'form-control')) !!} --}}
-            <select name="name_recipient" id="name_recipient" class="form-control">
-                <option>Opciones</option>
-                <option>Opcion2</option>
-
+            {!! Form::select('name_recipient',$users,[], array('class' => 'form-control','multiple')) !!}
             </select>
         </div>
     </div>
@@ -69,7 +62,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Especialidad:</strong>        
-            {!! Form::text('specialization', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::select('specialization',$sps,[], array('class' => 'form-control','multiple')) !!}
         </div>
     </div>
 
@@ -83,7 +76,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Estado:</strong>
-            {!! Form::text('status', null, array('placeholder' => 'Abierto','class' => 'form-control', 'disabled')) !!}
+            {!! Form::text('status','A', array('class' => 'form-control','readonly')) !!}
         </div>
     </div>
 
