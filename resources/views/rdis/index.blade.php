@@ -53,6 +53,32 @@
  @endforeach
 </table>
 
+{{-- <table class="table table-bordered">
+  <tr>
+    <th>No</th>
+    <th>Remitente</th>
+    <th>Destinatario</th>
+    <th>Asunto</th>
+    <th>Especialidad</th>
+    <th>estado</th>
+    <th width="150">Action</th>
+  </tr>
+  @foreach ($data as $key => $rdi)
+   <tr>
+     <td>{{ ++$i }}</td>
+     <td>{{ $rdi->name_sender }}</td>
+     <td>{{ $rdi->name_recipient }}</td>
+     <td>{{ $rdi->subject }}</td>
+     <td>{{ $rdi->specialization }}</td>
+     <td>{{ $rdi->status }}</td>
+     <td>
+        <a class="btn btn-outline-secondary" href="{{ route('rdis.show',$rdi->id) }}">Ver</a>
+        <a class="btn btn-outline-primary" href="{{ route('rdis.edit',$rdi->id) }}">Editar</a>
+     </td>
+   </tr>
+  @endforeach
+ </table> --}}
+
 
 {!! $data->render() !!}
 

@@ -130,8 +130,18 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('roles.index')
-                        ->with('success','El Rol se ha Borrado');
+        $roleID = auth()->user()->id; 
+        var_dump($roleID);
+
+        if ($roleID != $id) {
+            DB::table("roles")->where('id',$id)->delete();
+            return redirect()->route('roles.index')
+                ->with('success','El Rol se ha Borrado');
+        }else
+             return redirect()->route('roles.index')
+            ->with('danger','No puedes borrar un rol que estas utilizando !');
+
+
     }
+    
 }
