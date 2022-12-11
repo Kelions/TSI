@@ -55,6 +55,7 @@
                         <li><a class="nav-link" href="{{ route('users.index') }}">Gestion Usuarios</a></li>
                             <li><a class="nav-link" href="{{ route('roles.index') }}">Gestion Roles</a></li>
                             <li><a class="nav-link" href="{{ route('proyects.index') }}">Gestion Proyectos</a></li>
+                            <li><a class="nav-link" href="{{ route('rdis.index') }}">Gestion RDI</a></li>
                             <ul>
                                 <a class="nav-link">
                                     <form action="{{route('logout')}}" method="POST">

@@ -4,6 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Rdi;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+use DB;
+use Hash;
+use Illuminate\Support\Arr;
+
+use Auth;
 
 class RdiController extends Controller
 {
@@ -24,11 +34,11 @@ class RdiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $rdis = Rdi::latest()->paginate(5);
-        return view('rdis.index',compact('rdi'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $data = Rdi::orderBy('id','ASC')->paginate(5);
+        return view('rdis.index',compact('data'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     
     /**
@@ -38,7 +48,8 @@ class RdiController extends Controller
      */
     public function create()
     {
-        return view('rdis.create');
+        $permission = Permission::get();
+        return view('rdis.create',compact('permission'));
     }
     
     /**
@@ -49,15 +60,22 @@ class RdiController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
+        $this->validate($request, [
+            'id_proyect' => 'required',
+            'name_sender' => 'required',
+            'name_recipient' => 'required',
+            'subject' => 'required',
+            'specialization' => 'required',
+            'content' => 'required',
+            'status' => 'required',
         ]);
     
-        Rdi::create($request->all());
+        $input = $request->all();
+        $rdi = Rdi::create($input);
+        /*$user->assignRole($request->input('roles'));*/
     
         return redirect()->route('rdis.index')
-                        ->with('success','El RDI se ha Creado Satisfactoriamente.');
+                        ->with('success','El Nuevo RDI se ha creado Satisfactoriamente');
     }
     
     /**

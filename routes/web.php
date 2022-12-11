@@ -24,6 +24,4 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('rdis', RdiController::class);
 });
 
-//Route::get('crear_rdi', function () {
-//    return view('RDI/create_rdi');
-//})->name('crear_rdi');
+

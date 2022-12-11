@@ -9,7 +9,7 @@
                 <h2>Generar RDI</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-secondary mb-4" href="{{ route('proyects.index') }}"> Volver</a>
+                <a class="btn btn-outline-secondary mb-4" href="{{ route('rdis.index') }}"> Volver</a>
             </div>
         </div>
     </div>
@@ -26,49 +26,63 @@
       </div>
     @endif
     
-    
-    
-    <form action="{{ route('proyects.store') }}" method="POST">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Nombre:</strong>
-                    <input type="text" name="name" class="form-control" placeholder="">
-                </div>
-            </div>
-        
-            {{-- el Form::text (bla bla) es para hacer un ID --}}
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Apellido:</strong>        
-                    <input type="text" name="name" class="form-control" placeholder="">
-                </div>
-            </div>
-        
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>RUT:</strong> <small>(Sin puntos y con digito verificador)</small>
-                    <input type="text" name="name" class="form-control" placeholder="12345678-9">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Tema RDI:</strong>
-                    <input type="text" name="name" class="form-control" placeholder="...">
-                </div>
-            </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 mb-5">
-            <strong>Requerimiento de Informacion:<small></small></strong>
-
-            <textarea class="form-control mb-5" name="" id="editor" cols="30" rows="10"></textarea>
-            
+    {!! Form::open(array('route' => 'rdis.store','method'=>'POST')) !!}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Id projecto:</strong>
+            {!! Form::text('id_proyect', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
-    </form>
-
     </div>
-    
+
+    {{-- el Form::text (bla bla) es para hacer un ID --}}
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Remitente:</strong>        
+            {!! Form::text('name_sender', null, array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Destinnatario:</strong>
+            {!! Form::text('name_recipient', null, array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Asunto:</strong>        
+            {!! Form::text('subject', null, array('placeholder' => 'Requisito plano','class' => 'form-control')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Especialidad:</strong>        
+            {!! Form::text('specialization', null, array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Contenido:</strong>
+            {!! Form::textarea('content', null, array('placeholder' => '','class' => 'form-control','id'=>'editor')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Estado:</strong>
+            {!! Form::text('status', null, array('placeholder' => 'Abierto','class' => 'form-control')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <button type="submit" class="btn btn-outline-success">Crear</button>
+    </div>
+</div>
+{!! Form::close() !!}
     
     
     <p class="text-center text-primary"><small>Sistema Comunicacional RDI</small></p>
