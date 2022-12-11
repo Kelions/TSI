@@ -31,22 +31,31 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Id projecto:</strong>
-            {!! Form::text('id_proyect', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <select name="id_proyect" id="id_proyect" class="form-control">
+                <option>Opciones</option>
+                <option>Opcion2</option>
+            </select>
         </div>
+        
     </div>
 
     {{-- el Form::text (bla bla) es para hacer un ID --}}
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Remitente:</strong>        
-            {!! Form::text('name_sender', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::text('name_sender', null, array('placeholder' => 'Juan','class' => 'form-control', 'disabled')) !!}
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Destinnatario:</strong>
-            {!! Form::text('name_recipient', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {{-- {!! Form::text('name_recipient', null, array('placeholder' => '','class' => 'form-control')) !!} --}}
+            <select name="name_recipient" id="name_recipient" class="form-control">
+                <option>Opciones</option>
+                <option>Opcion2</option>
+
+            </select>
         </div>
     </div>
 
@@ -74,7 +83,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Estado:</strong>
-            {!! Form::text('status', null, array('placeholder' => 'Abierto','class' => 'form-control')) !!}
+            {!! Form::text('status', null, array('placeholder' => 'Abierto','class' => 'form-control', 'disabled')) !!}
         </div>
     </div>
 
