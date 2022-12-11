@@ -58,7 +58,12 @@
             {{ $rdi->content}}
         </div>
     </div>
-    
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Respuesta:</strong>
+            {{ $rdi->respuesta}}
+        </div>
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Estado:</strong>

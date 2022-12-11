@@ -117,8 +117,13 @@ class RdiController extends Controller
     public function update(Request $request, Rdi $rdi)
     {
          request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'name_sender' => 'required',
+            'name_recipient' => 'required',
+            'subject' => 'required',
+            'specialization' => 'required',
+            'content' => 'required',
+            'respuesta' => 'required',
+            'status' => 'required',
         ]);
     
         $rdi->update($request->all());
